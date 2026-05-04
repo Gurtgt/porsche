@@ -54,39 +54,47 @@
 
 
     <script>
-const toggleBtn = document.getElementById("lang-toggle");
+document.addEventListener("DOMContentLoaded", () => {
 
-let currentLang = localStorage.getItem("lang") || "en";
+  const toggleBtn = document.getElementById("lang-toggle");
 
-const translations = {
-  en: {
-    title: "Porsche",
-    desc: "Im a gorilla tag youtuber and a gt competitive player. (real name is Porsche 911 Carrera T) I sell and create portfolios too.",
-    yt: "@porsche911carrerat"
-  },
-  de: {
-    title: "Porsche",
-    desc: "Ich bin ein Gorilla Tag YouTuber und ein GT Competitive Spieler. (echter Name ist Porsche 911 Carrera T) Ich erstelle und verkaufe auch Portfolios.",
-    yt: "@porsche911carrerat"
+  if (!toggleBtn) {
+    console.log("Language button not found");
+    return;
   }
-};
 
-function updateLanguage() {
-  document.querySelectorAll("[data-key]").forEach(el => {
-    const key = el.getAttribute("data-key");
-    el.textContent = translations[currentLang][key];
+  let currentLang = localStorage.getItem("lang") || "en";
+
+  const translations = {
+    en: {
+      title: "Porsche",
+      desc: "Im a gorilla tag youtuber and a gt competitive player. (real name is Porsche 911 Carrera T) I sell and create portfolios too."
+    },
+    de: {
+      title: "Porsche",
+      desc: "Ich bin ein Gorilla Tag YouTuber und ein GT Competitive Spieler. (echter Name ist Porsche 911 Carrera T) Ich verkaufe und erstelle auch Portfolios."
+    }
+  };
+
+  function updateLanguage() {
+    document.querySelectorAll("[data-key]").forEach(el => {
+      const key = el.getAttribute("data-key");
+      if (translations[currentLang][key]) {
+        el.textContent = translations[currentLang][key];
+      }
+    });
+
+    toggleBtn.textContent = currentLang.toUpperCase();
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    currentLang = currentLang === "en" ? "de" : "en";
+    localStorage.setItem("lang", currentLang);
+    updateLanguage();
   });
 
-  toggleBtn.textContent = currentLang.toUpperCase();
-}
-
-toggleBtn.addEventListener("click", () => {
-  currentLang = currentLang === "en" ? "de" : "en";
-  localStorage.setItem("lang", currentLang);
   updateLanguage();
 });
-
-updateLanguage();
 </script>
 </body>
 </html>
