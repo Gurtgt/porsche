@@ -1,0 +1,127 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Background */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") center/cover no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1);
+}
+
+/* Layout */
+.container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Profile */
+.profile img {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+}
+
+.profile h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.profile p {
+  font-size: 13px;
+  max-width: 270px;
+  opacity: 0.85;
+  line-height: 1.4;
+  margin-bottom: 22px;
+}
+
+/* Glass Card */
+.card {
+  width: 350px;
+  padding: 15px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Links */
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 14px;
+  margin: 8px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  transition: all 0.25s ease;
+}
+
+.link span {
+  font-size: 14px;
+}
+
+/* Icons inside links */
+.link i {
+  font-size: 18px;
+  opacity: 0.9;
+  transition: 0.25s;
+}
+
+/* Hover effects */
+.link:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-2px);
+}
+
+/* Brand hover colors */
+.link:hover i.fa-youtube { color: #ff0808; }
+.link:hover i.fa-tiktok { color: #000000; }
+.link:hover i.fa-x-twitter { color: #000000; }
+.link:hover i.fa-discord { color: #1877F2; }
+
+/* Bottom Icons */
+.bottom-icons {
+  margin-top: 22px;
+  display: flex;
+  gap: 22px;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+
+p {
+  font-size: 14px;
+  opacity: 0.8;
+  max-width: 320px;
+  line-height: 1.5;
+}
