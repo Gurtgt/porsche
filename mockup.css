@@ -44,6 +44,7 @@ body {
 }
 
 .profile h1 {
+  font-family:'Times New Roman', Times, serif;
   font-size: 28px;
   margin-bottom: 8px;
   color: black
